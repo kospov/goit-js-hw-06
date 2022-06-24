@@ -8,13 +8,7 @@ const boxes = boxesCollection.children;
 createBoxesBtn.addEventListener('click', 
   inputNumberBoxesEl.addEventListener('blur', (event) => {
     let numberBoxes = 0;
-
-    if (event.currentTarget.value > Number(event.currentTarget.getAttribute('max')) || event.currentTarget.value < Number(event.currentTarget.getAttribute('min'))) {
-      alert(`Введите число в диапазоне от ${event.currentTarget.getAttribute('min')} до ${event.currentTarget.getAttribute('max')}`);
-    } else {
-      numberBoxes = Number(event.currentTarget.value);
-    };
-    
+    numberBoxes = Number(event.currentTarget.value);
     createBoxes(numberBoxes);
 
     console.log(`${numberBoxes} boxes was created.`);    
@@ -43,12 +37,6 @@ function destroyBoxes() {
   console.log(`All previous boxes was destroied.`);
   };
 
-function onClickCreateBtn() {
-  createBoxes(numberBoxes);
-};
-
 function onClickDestroyBtn() {
   destroyBoxes();
 };
-
-
