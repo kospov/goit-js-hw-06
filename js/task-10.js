@@ -5,15 +5,7 @@ const boxesCollection = document.querySelector('[id="boxes"]');
 
 const boxes = boxesCollection.children;
 
-createBoxesBtn.addEventListener('click', 
-  inputNumberBoxesEl.addEventListener('blur', (event) => {
-    let numberBoxes = 0;
-    numberBoxes = Number(event.currentTarget.value);
-    createBoxes(numberBoxes);
-
-    console.log(`${numberBoxes} boxes was created.`);    
-  }),
-);
+createBoxesBtn.addEventListener('click', onClickCreateBtn);
 
 destroyBoxesBtn.addEventListener('click', onClickDestroyBtn);
 
@@ -36,6 +28,14 @@ function destroyBoxes() {
   inputNumberBoxesEl.value = '';
   console.log(`All previous boxes was destroied.`);
   };
+
+function onClickCreateBtn() {
+  let numberBoxes = 0;
+  numberBoxes = Number(inputNumberBoxesEl.value);
+  createBoxes(numberBoxes);
+  console.log(`${numberBoxes} boxes was created.`);
+  inputNumberBoxesEl.value = '';
+};
 
 function onClickDestroyBtn() {
   destroyBoxes();
