@@ -30,7 +30,7 @@ const createGallaryItem = ({ url, alt } = {}) => {
 
 const createGallaryList = images.map(image => {
   return createGallaryItem(image);
-}).join(",");
+}).join("");
 
 galleryEl.insertAdjacentHTML("beforeend", createGallaryList);
 
