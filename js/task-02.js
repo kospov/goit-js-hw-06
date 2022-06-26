@@ -16,13 +16,10 @@ const createItemEl = (nameEl) => {
   return itemEl;
 };
 
+const newArray = [];
+
 ingredients.forEach(ingredient => {
-  listEl.append(createItemEl(ingredient));
-});
+  newArray.push(createItemEl(ingredient));
+ });
 
-console.log(listEl);
-
-
-
-
-
+listEl.append(...newArray);
