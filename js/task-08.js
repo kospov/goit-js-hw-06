@@ -13,8 +13,7 @@ function onSubmitEvent(event) {
         };
         console.log(userData);
     };
-    event.currentTarget.elements.email.value = '';
-    event.currentTarget.elements.password.value = '';
+    formEl.reset();
 };
 
 
